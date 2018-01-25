@@ -1,0 +1,24 @@
+@font-face {
+	font-family: "newFont";
+	src:url('../css/gotfont.ttf');
+}
+
+body {
+	background-image: url('../images/pic/gotbgp.jpg');
+}
+
+p {
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20px;
+	text-align: center;
+}
+
+h2 {
+	font-family: newFont;
+	text-align: center;
+}
+
+img {
+	margin-left: 30%;
+}
