@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>Form Validation</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/weekthreefvstyle.css">	
+</head>
+
+
+<body>
+
+<!-- Header -->
+	<header id="header">
+		<h1>Game of Thrones Fans</h1>
+	</header>
+
+<!-- Navigation Menu -->
+	<div id="menu">	
+		<ul>
+			<li><a href="#wiki">About Game of Thrones</a></li>
+			<li><a href="#audio">Sound of Game of Thrones</a></li>
+			<li><a href="#video">All About Trailer</a></li>
+			<li><a href="#info">About You</a></li>
+		</ul>
+	</div>
+
+<!-- Form Content -->
+	<div id="form">
+	
+<!-- About Game of Thrones -->
+		<fieldset id="wiki">
+			<legend class="legend">About Game of Thrones</legend>
+
+			<p><strong>Although</strong> you already watched the latest episode of GOT, you may forget something happened in previous episodes. Here is the link to help you know about Game of Thrones systematically.
+			<a href="http://www.gameofthrones.com" target="_blank">
+			Know more about Game of Thrones!</a></p>
+		</fieldset>
+
+<!-- Sound of Game of Thrones -->
+		<fieldset id="audio">
+			<legend class="legend">Sound of Game of Thrones</legend>
+
+			<p><strong>Remind</strong> you of another memory of Game of Thrones: <br>
+			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/252960374&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe></p><br>
+
+			<p><strong>Do you want more?</strong>
+			<a href="https://www.soundcloud.com/search?q=game%20of%20thrones" target="_blank">
+			<input id="click" type="button" name="more" value="Click Here"></a></p>
+		</fieldset>
+
+<!-- All About Trailer -->
+		<fieldset id="video">
+			<legend class="legend">All about trailer</legend>
+
+			<p><strong>Season 6 Trailer</strong></p><br>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/EI0ib1NErqg" frameborder="0" allowfullscreen></iframe>
+		</fieldset>
+
+<!-- About You -->
+		<form id="aboutyou" action="link/thank_you_link.html" onsubmit="return validate()">
+			<fieldset id="info" name="info">
+				<legend class="legend">About You</legend>
+
+				<ul>
+					<li>
+						<label for="firstname">First Name:</label>
+						<img src="images/icons/yes.png" class="yes" id="firstNameYes">
+						<img src="images/icons/no.png" class="no" id="firstNameNo">
+						<br>
+
+						<input type="text" name="firstname" id="firstname" placeholder="First Name" onkeyup="return firstNameValidate()">
+						<br>
+
+						<span class="tip" id="firstNameTip"><small>Cannot be Empty and Letters Only</small></span>
+					</li><br><br>
+
+					<li>
+						<label for="lastname">Last Name:</label>
+						<img src="images/icons/yes.png" class="yes" id="lastNameYes">
+						<img src="images/icons/no.png" class="no" id="lastNameNo">
+						<br>
+
+						<input type="text" name="lastname" id="lastname" placeholder="last Name" onkeyup="return lastNameValidate()">
+						<br>
+
+						<span class="tip" id="lastNameTip"><small>Cannot be Empty and Letters Only</small></span>
+					</li><br><br>
+
+					<li>
+						<label for="email">Enter Your Contact Email:</label>
+						<img src="images/icons/yes.png" class="yes" id="emailYes">
+						<img src="images/icons/no.png" class="no" id="emailNo">
+						<br>
+
+						<input type="email" name="email" id="email" onkeyup="return emailValidate()">
+						<br>
+
+						<span class="tip" id="emailTip"><small>Please Input Valid Email</small></span>
+					</li><br><br>
+
+					<li>
+						<label for="password">Your Password:</label>
+						<img src="images/icons/yes.png" class="yes" id="passwordYes">
+						<img src="images/icons/no.png" class="no" id="passwordNo">
+						<br>
+
+						<input type="password" name="password" id="password" autocomplete="off" onkeyup="return passwordValidate()">
+						<br>
+
+						<span class="tip" id="passwordTip"><small><ul><li>at Least 6 Characters</li><li>at Least One Number, One Lowercase and One Uppercase Letter</li></ul></small></span>
+					</li><br><br>
+
+					<li>
+						<label for="zipcode">Your zipcode</label>
+						<img src="images/icons/yes.png" class="yes" id="zipcodeYes">
+						<img src="images/icons/no.png" class="no" id="zipcodeNo">
+						<br>
+
+						<input type="text" name="zipcode" id="zipcode" onkeyup="return zipcodeValidate()">
+						<br>	
+
+						<span class="tip" id="zipcodeTip"><small>Must Enter Valid Zipcode</small></span>									
+					</li><br><br>
+					
+					<div>
+						<li>
+							<label for="gender">You Are:</label>
+							<img src="images/icons/yes.png" class="yes" id="genderYes">
+							<img src="images/icons/no.png" class="no" id="genderNo">
+							<br>
+				
+							<input type="radio" name="gender" value="female" id="female" onclick="genderValidate()">Female<br>
+							<input type="radio" name="gender" value="male" id="male" onclick="genderValidate()">Male<br>
+							<input type="radio" name="gender" value="others" id="others" onclick="genderValidate()">Others
+							<br>
+
+							<span class="tip" id="genderTip"><small>You Have to Choose One</small></span>								
+						</li><br><br>
+					</div>
+
+					<li>
+						<label for="books">How many Game of Thrones books have you read?</label>
+						<img src="images/icons/yes.png" class="yes" id="booksYes">
+						<img src="images/icons/no.png" class="no" id="booksNo">
+						<br>
+
+						<input type="text" name="books" id="books" placeholder="0 ~ 7" onkeyup="return booksValidate()">
+						<br>
+
+						<span class="tip" id="booksTip"><small>You Must Enter the Integer From 0 to 7</small></span>					
+					</li><br><br>
+
+					<li>
+						<label for="season">Which season(s) of Game of Thrones do you like so far?</label>
+						<img src="images/icons/yes.png" class="yes" id="seasonYes">
+						<img src="images/icons/no.png" class="no" id="seasonNo">	
+						<br>
+					
+						<input type="checkbox" name="s1" onclick="return seasonValidate()">1
+						<input type="checkbox" name="s2" onclick="return seasonValidate()">2
+						<input type="checkbox" name="s3" onclick="return seasonValidate()">3
+						<input type="checkbox" name="s4" onclick="return seasonValidate()">4
+						<input type="checkbox" name="s5" onclick="return seasonValidate()">5
+						<input type="checkbox" name="s6" onclick="return seasonValidate()">6
+						<br>
+
+						<span class="tip" id="seasonTip"><small>You Can Only Choose One</small></span>									
+					</li><br><br>
+
+					<li>
+						<label for="house">Pick your Favorite House of Family:</label>
+						<img src="images/icons/yes.png" class="yes" id="houseYes">
+						<img src="images/icons/no.png" class="no" id="houseNo">
+						<br>
+
+						<select name="house">
+							<option selected>You Can Only Pick One</option>
+							<option value="House Stark" onclick="return houseValidate()">House Stark</option>
+							<option value="House Lannister" onclick ="return houseValidate()">House Lannister</option>
+							<option value="House Baratheon" onclick="return houseValidate()">House Baratheon</option>
+							<option value="House Targaryen" onclick="return houseValidate()">House Targaryen</option>
+							<option value="House Greyjoy" onclick="return houseValidate()">House Greyjoy</option>
+							<option value="House Arryn" onclick="return houseValidate()">House Arryn</option>
+							<option value="House Martell" onclick="return houseValidate()">House Martell</option>
+							<option value="House Tully" onclick="return houseValidate()">House Tully</option>
+							<option value="House Tyrell" onclick="return houseValidate()">House Tyrell</option>
+						</select>					
+					</li><br><br>
+
+					<li>
+						<label for="comment">What do you want to tell others:(optional)</label><img src="images/icons/yes.png" class="yes" id="commentYes">
+						<img src="images/icons/no.png" class="no" id="commentNo">
+						<br>
+
+						<textarea id="comment" name="comment" rows="10" cols="50" placeholder="Tell us..." onkeyup="return commentValidate()"></textarea>
+						<br>
+
+						<span class="tip" id="commentTip"><small>(Up to 500 characters.)</small></span>						
+					</li><br><br><br>
+
+					<li>
+						<input id="submit" type="submit" name="submit" value="submit">
+						<input id="reset" type="reset" name="reset" value="reset">
+					</li>
+				</ul>			
+			</fieldset>
+		</form>
+	</div>
+
+<!-- House Picture -->
+	<div id="house_pic">
+		<div class="pic">
+			<img src="images/pic/stark.jpg" alt="stark">
+			<img src="images/pic/lannister.jpg" alt="lannister">
+			<img src="images/pic/baratheon.jpg" alt="baratheon">
+		</div>
+
+		<div class="pic">
+			<img src="images/pic/targaryen.jpg" alt="targaryen">
+			<img src="images/pic/greyjoy.jpg" alt="greyjoy">
+			<img src="images/pic/arryn.jpg" alt="arryn">
+		</div>
+
+		<div class="pic">
+			<img src="images/pic/martell.jpg" alt="martell">
+			<img src="images/pic/tully.jpg" alt="tully">
+			<img src="images/pic/tyrell.jpg" alt="tyrell">
+		</div>
+	</div>
+
+<!-- Script -->
+	<script type="text/javascript">
+		function firstNameValidate() {
+			var firstName = document.getElementById("firstname");
+			var letters = /^[A-Za-z]+$/;
+
+			if (firstName.value.match(letters)) {
+				document.getElementById('firstNameYes').style.visibility = 'visible';
+				document.getElementById('firstNameNo').style.visibility = 'hidden';
+				document.getElementById('firstNameTip').style.visibility = 'hidden';
+				return true;
+			}
+			else {
+				document.getElementById('firstNameNo').style.visibility = 'visible';
+				document.getElementById('firstNameTip').style.visibility = 'visible';
+				document.getElementById('firstNameYes').style.visibility = 'hidden';
+				return false;
+			}
+		}
+
+		function lastNameValidate() {
+			var lastName = document.getElementById("lastname");
+			var letters = /^[A-Za-z]+$/;
+
+			if (lastName.value.match(letters)) {
+				document.getElementById('lastNameYes').style.visibility = 'visible';
+				document.getElementById('lastNameNo').style.visibility = 'hidden';
+				document.getElementById('lastNameTip').style.visibility = 'hidden';
+				return true;
+			}
+			else {
+				document.getElementById('lastNameNo').style.visibility = 'visible';
+				document.getElementById('lastNameTip').style.visibility = 'visible';
+				document.getElementById('lastNameYes').style.visibility = 'hidden';
+				return false;
+			}
+		}
+
+		function emailValidate() {
+			var email = document.getElementById("email");
+			var std = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+			if (email.value.match(std)) {
+				document.getElementById('emailYes').style.visibility = 'visible';
+				document.getElementById('emailNo').style.visibility = 'hidden';
+				document.getElementById('emailTip').style.visibility = 'hidden';
+				return true;
+			}
+			else {
+				document.getElementById('emailNo').style.visibility = 'visible';
+				document.getElementById('emailTip').style.visibility = 'visible';
+				document.getElementById('emailYes').style.visibility = 'hidden';
+				return false;
+			}
+		}
+
+		function passwordValidate() {
+			var pwd = document.getElementById("password");
+			var std = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+			if (pwd.value.match(std)) {				
+				document.getElementById('passwordYes').style.visibility = 'visible';
+				document.getElementById('passwordNo').style.visibility = 'hidden';
+				document.getElementById('passwordTip').style.visibility = 'hidden';
+				return true;
+			}
+			else {
+				document.getElementById('passwordNo').style.visibility = 'visible';
+				document.getElementById('passwordTip').style.visibility = 'visible';
+				document.getElementById('passwordYes').style.visibility = 'hidden';
+				return false;
+			}
+		}
+
+		function zipcodeValidate() {
+			var code = document.getElementById("zipcode");			
+			
+			if (code.value % 1 == 0 && code.value.length == 5 && code.value != "") {			
+				document.getElementById('zipcodeYes').style.visibility = 'visible';
+				document.getElementById('zipcodeNo').style.visibility = 'hidden';
+				document.getElementById('zipcodeTip').style.visibility = 'hidden';
+				return true;
+			}
+			else {
+				document.getElementById('zipcodeNo').style.visibility = 'visible';
+				document.getElementById('zipcodeTip').style.visibility = 'visible';
+				document.getElementById('zipcodeYes').style.visibility = 'hidden';
+				return false;
+			}
+		}
+
+		function genderValidate() {
+			document.getElementById('genderYes').style.visibility = 'visible';
+			document.getElementById('genderNo').style.visibility = 'hidden';
+			document.getElementById('genderTip').style.visibility = 'hidden';
+			return true;
+		}
+
+		function booksValidate() {
+			var books = document.getElementById("books");
+
+			if (books.value % 1 == 0 && 7 >= books.value && books.value >= 0 && books.value != "") {				
+				document.getElementById('booksYes').style.visibility = 'visible';
+				document.getElementById('booksNo').style.visibility = 'hidden';
+				document.getElementById('booksTip').style.visibility = 'hidden';
+				return true;
+			}
+			else {
+				document.getElementById('booksNo').style.visibility = 'visible';
+				document.getElementById('booksTip').style.visibility = 'visible';
+				document.getElementById('booksYes').style.visibility = 'hidden';
+				return false;
+			}
+		}
+
+		function seasonValidate() {
+			document.getElementById('seasonYes').style.visibility = 'visible';
+			document.getElementById('seasonNo').style.visibility = 'hidden';
+			document.getElementById('seasonTip').style.visibility = 'hidden';
+			return true;
+		}
+
+		function houseValidate() {
+			alert ("hi");
+			return true;
+		}
+
+		function commentValidate () {
+			document.getElementById('commentYes').style.visibility = 'visible';
+			document.getElementById('commentNo').style.visibility = 'hidden';
+			document.getElementById('commentTip').style.visibility = 'visible';
+			return true;
+		}
+
+		function validate() {
+			return firstNameValidate()
+				&& lastNameValidate()
+				&& emailValidate()
+				&& passwordValidate()
+				&& zipcodeValidate()
+				&& genderValidate()
+				&& booksValidate()
+				&& seasonValidate()
+				&& commentValidate()
+			;
+		}
+	</script>		
+</body>
+
+</html>
